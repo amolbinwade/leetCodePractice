@@ -1,11 +1,14 @@
 package com.dsa.leetcodePractice.easy.validParentheses;
 
+import java.util.Stack;
+
+
 /****
  * 
  * @author amol
- * This solution usage Stack to solve the valid parentheseses problem.
+ * This solution usage Stack to solve the valid parentheses problem.
  * For every opening parentheses, it pushes the char in stack.
- * For every closing parenthese, it checks the last element in stack and if it is not matching with closing parentheses then it returns false.
+ * For every closing parentheses, it checks the last element in stack and if it is not matching with closing parentheses then it returns false.
  * If it matches, then it pops the stack and make the flag true.
  * After all chars processed in string, if the stack is empty it returns true. If stack is not empty, it means some closing parentheses are still present for which
  * matching closing parentheses were not in String.
@@ -22,13 +25,14 @@ public class SolutionWithStack {
 	
 	public boolean isValid(String s) {
 		boolean isValid = false;
-		MyStack stack = new MyStack();
+		//MyStack stack = new MyStack();
+		Stack stack = new Stack(); 
 		for(int i=0; i<s.length(); i++){
 			char c = s.charAt(i);
 			if(isOpeningParentheses(c)){
 				stack.push(c);
 			} else {
-				if(isMatchingParentheses(stack.peek(), c)){
+				if(!stack.isEmpty() && isMatchingParentheses((char)stack.peek(), c)){
 					stack.pop();
 					isValid = true;
 				} else {
@@ -63,31 +67,5 @@ public class SolutionWithStack {
 		return false;
 		
 	}
-	
-	class MyStack {
-		
-		char[] arr = new char[5000];
-		int head = 0;
-		
-		public void push(char c){
-			arr[head++] = c;		
-		}
-		
-		public char pop(){
-			return arr[--head];
-			
-		}
-		
-		public char peek(){
-			if(head ==0) return 'n';
-			return arr[head-1];
-		}
-		
-		public boolean isEmpty(){
-			return head==0;
-		}
-	}
-	
-	
 
 }
