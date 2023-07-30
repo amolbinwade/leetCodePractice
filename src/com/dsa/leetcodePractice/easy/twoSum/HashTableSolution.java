@@ -18,12 +18,14 @@ public class HashTableSolution {
     }
 
     public int[] twoSum(int[] nums, int target) {
-        //array to store [target-value] for each nums[i]
+        //hash table to store <value, index>
         Hashtable<Integer, Integer> table = new Hashtable<Integer, Integer>();
         int[] solution = new int[2];
 
         for(int i=0; i < nums.length; i++){
             int offset = target - nums[i];
+            // check if the offset (target-num[i]) is present in hash table
+            //if present stop and return the index of both ints
             Integer targetIndex = table.get(offset) ;
             if(targetIndex != null){
                 solution[0] = targetIndex;
