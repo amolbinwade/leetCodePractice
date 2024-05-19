@@ -1,4 +1,4 @@
-package com.dsa.leetcodePractice.easy.removeDuplicates;
+package com.dsa.leetcodePractice.easy.twoPointer.removeDuplicates;
 
 public class SimpleSolution {
 

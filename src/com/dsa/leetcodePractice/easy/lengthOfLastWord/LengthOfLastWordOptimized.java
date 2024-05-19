@@ -8,7 +8,7 @@ public class LengthOfLastWordOptimized {
 
     public static void main(String[] args){
         LengthOfLastWordOptimized solution = new LengthOfLastWordOptimized();
-        System.out.println(solution.lengthOfLastWord("Abra dabra"));
+        System.out.println(solution.lengthOfLastWord("what is your  name"));
     }
     public int lengthOfLastWord(String s) {
 
