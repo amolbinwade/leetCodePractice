@@ -41,13 +41,13 @@ package com.dsa.leetcodePractice.arrayandstring;
  */
 
 
-public class RemoveDupFromSortedArray {
+public class RemoveDupFromSortedArray2 {
 
     /***
      * Method with two loops.
      * Loop-1 array iteration from 0th index
      * Skip for i=0,1
-     * if element is equals to last two elements in array then start loop-2
+     * if ith element is equals to i-1 and i-2 elements in array then start loop-2
      * loop-2 : shift all left elements by 1 place to left
      * @param nums
      * @return
@@ -99,7 +99,7 @@ public class RemoveDupFromSortedArray {
     public static void main(String[] args){
         int[] nums = {0,0,1,1,1,1,2,3,3};
 
-        RemoveDupFromSortedArray obj = new RemoveDupFromSortedArray();
+        RemoveDupFromSortedArray2 obj = new RemoveDupFromSortedArray2();
         int output = obj.removeDuplicatesOptimized(nums);
 
         for(int i=0; i<output; i++){

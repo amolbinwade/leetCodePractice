@@ -94,6 +94,5 @@ public class ValidPalindrome {
         ValidPalindrome solution = new ValidPalindrome();
         System.out.println(solution.isPalindromeOptimized(s));
 
-
     }
 }
