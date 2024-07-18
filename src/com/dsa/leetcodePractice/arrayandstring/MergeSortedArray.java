@@ -85,6 +85,7 @@ public class MergeSortedArray {
 
     /**
      * More optimized code where loop starts from the end.
+     * 
      * @param nums1
      * @param m
      * @param nums2
