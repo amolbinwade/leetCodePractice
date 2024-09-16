@@ -1,5 +1,9 @@
 package com.dsa.leetcodePractice.twopointers;
 
+import java.util.List;
+import java.util.Map;
+import java.util.stream.Collectors;
+
 /***
  * You are given an integer array nums. You are initially positioned at the array's first index, and each element in the array represents your maximum jump length at that position.
  *
@@ -37,8 +41,6 @@ public class JumpGame {
      */
 
     public boolean canJump(int[] nums) {
-
-
 
         int j=nums.length-1, i=j-1;
         while(i >= 0 ){
