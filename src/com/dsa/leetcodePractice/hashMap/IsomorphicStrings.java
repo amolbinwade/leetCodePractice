@@ -1,4 +1,4 @@
-package com.dsa.leetcodePractice.HashMap;
+package com.dsa.leetcodePractice.hashMap;
 
 public class IsomorphicStrings {
 
