@@ -35,26 +35,28 @@ package com.dsa.leetcodePractice.slidingWindow;
 public class MinSizeSubArraySum {
 
     public static void main(String[] args){
-        int[] nums = {2,3,1,2,4,3};
+        int[] nums = {4,3,2,3,1,2};
         MinSizeSubArraySum minSizeSubArraySum = new MinSizeSubArraySum();
         System.out.println(minSizeSubArraySum.minSubArrayLen(7, nums));
     }
 
     public int minSubArrayLen(int target, int[] nums) {
-        // initiate an array to hold the sub-array with sum elements
-        int[] subArray = new int[nums.length];
-        int sum = nums[0];
-        int i=0, j=1;
-        // loop nums and keep adding elements to subArray till sum <= target
-        if(sum >= target)
-            return 1;
-        while(sum < target){
-            sum += nums[j++];
-            
-            if(sum >= target){
-                return subArray.length;
+        int start = 0;
+        int sum = 0;
+        int minLength = Integer.MAX_VALUE;
+
+        for (int end = 0; end < nums.length; end++) {
+            sum += nums[end];
+
+            // Shrink the window from the left while the sum >= target
+            while (sum >= target) {
+                minLength = Math.min(minLength, end - start + 1);
+                sum -= nums[start];
+                start++;
             }
         }
-        return 0;
+
+        return (minLength == Integer.MAX_VALUE) ? 0 : minLength;
+
     }
 }
